@@ -19,6 +19,7 @@ variable "avail-zone" {
 }
 
 variable "seg-id" {
+  type = "list"
   description = "Security Group values for the external DB connectivity"
 }
 
