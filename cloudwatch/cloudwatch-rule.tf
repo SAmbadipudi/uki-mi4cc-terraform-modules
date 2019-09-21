@@ -15,7 +15,13 @@ resource "aws_cloudwatch_event_rule" "mi4cc_cloudwatch_event_rule" {
   schedule_expression = "${lookup(var.schedule_expression, var.event_rules[count.index])}"
 }
 
-resource "aws_cloudwatch_event_target" "mi4cc_event_target" {
+resource "aws_cloudwatch_event_target" "market_cloudwatch_event_target" {
+  count     = "${length("${var.event_rules}")}" 
+  target_id = "${var.event_target_id}-${var.event_rules[count.index]}"
   rule      = "${aws_cloudwatch_event_rule.mi4cc_cloudwatch_event_rule[count.index].name}"
-  arn       = "arn:aws:iam::195211983652:role/uki_mi4cc_iam_role_glue"
+  arn       = "${aws_lambda_function.mi4cc_eventwatch_lambda.arn}"
+#  input     = "${var.event_target_json_input[count.index]}"
+  input     = <<EOF
+{ "bucket_name": "${var.bucket_name}", "file_path": "${var.file_path}", "glue_job_name": "${var.glue_job_name}" }
+EOF
 }
