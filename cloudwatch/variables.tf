@@ -42,14 +42,3 @@ variable "cloudwatch_event_rule_description" {
   description = "AWS Glue DB connection Name"
 }
 
-variable "lambda_arn" {
-  description = "Lambda arn"
-}
-
-variable "action_lambda" {
-  description = "Lambda Action"
-}
-
-variable "cloudwatch_lambda_st_id" {
-  description = "Unique name for the Lambda permission"
-}
