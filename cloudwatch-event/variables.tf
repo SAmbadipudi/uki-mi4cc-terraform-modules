@@ -9,6 +9,7 @@ variable "event_target_id" {
 
 variable "event_taget_rule_name" {
    description = "event target rule names"
+   type = "list"
 }
 
 variable "bucket-name" {
