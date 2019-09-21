@@ -7,29 +7,33 @@ variable "schedule_expression" {
    type        = "map"
 }
 
-variable "input1" {
-   description      = "Provide option key name"
+variable "event_target_id" {
+   description = "event target ID"
 }
 
-variable "input2" {
-   description      = "Provide option key name"
-}
-
-variable "input3" {
-   description      = "Provide option key name"
-}
-
-variable "bucket-name" {
-   description      = "Value for the input1 key"
-}
-
-variable "file-path" {
-   description      = "Value for the input2 key"
-}
-
-variable "glue-job-name" {
-   description      = "Value for the input3 key"
-}
+#variable "input1" {
+#   description      = "Provide option key name"
+#}
+#
+##variable "input2" {
+#   description      = "Provide option key name"
+#}
+#
+#variable "input3" {
+#   description      = "Provide option key name"
+#}
+#
+#variable "bucket-name" {
+#   description      = "Value for the input1 key"
+#}
+#
+#variable "file-path" {
+#   description      = "Value for the input2 key"
+#}
+#
+#variable "glue-job-name" {
+#   description      = "Value for the input3 key"
+#}
 variable "cloudwatch_event_rule_name" {
   description = "Username for DB connectivity"
 }
