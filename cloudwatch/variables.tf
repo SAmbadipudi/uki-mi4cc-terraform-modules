@@ -7,10 +7,6 @@ variable "schedule_expression" {
    type        = "map"
 }
 
-variable "event_target_id" {
-   description = "event target ID"
-}
-
 #variable "input1" {
 #   description      = "Provide option key name"
 #}
