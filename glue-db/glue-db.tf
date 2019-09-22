@@ -15,7 +15,7 @@ resource "aws_glue_connection" "uki-dev-glue-con-mi4cc-avaya" {
   }
   
   tags = {
-      Name                = "${var.cloudwatch_event_rule_name}"
+      Name                = "${var.glue-conn-name}"
       Owner-CreatedBy	  = "${var.owner-createdby}"
       Owner-Data	  = "${var.owner-data}"
       Owner-Infra         = "${var.owner-infra}"
