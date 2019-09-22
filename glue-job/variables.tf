@@ -1,10 +1,10 @@
-######################################################## Glue-Job variables ###########################################################
 variable "gl-count" {
   description = "No.of Glue Job process"
   default   =  "3"
 }
 
 variable "jobnames" {
+ type = "list"
  description = "glue process name"
 }
 
@@ -33,6 +33,7 @@ variable "max_concurrent" {
 }
 
 variable "connections" {
+  type = "list"
   description = "DB connections for Glue job"
 }
 
@@ -47,41 +48,4 @@ variable "extra-jars" {
 variable "encryption-type" {
   description = "Encryption Type"
   default = "sse-s3"
-}
-
-
-variable "owner-createdby" {
-  description = "Owner for this environment"
-}
-
-variable "owner-data" {
-  description = "Owner data for this environment"
-}
-
-variable "owner-infra" {
-  description = "Owner infra for this environment"
-}
-
-variable "project-name" {
-  description = "Project Name"
-}
-
-variable "project-subprojectname" {
-  description = "Sub project name"
-}
-
-variable "project-wbscode" {
-  description = "WBS code for this project"
-}
-
-variable "technical_owner" {
-  description = "Technical Owner for this environment"
-}
-
-variable "billing_code" {
-  description = "Billing code for this environment"
-}
-
-variable "compliance" {
-  description = "Compliance for this environment"
 }
